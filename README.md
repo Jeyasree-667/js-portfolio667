@@ -26,11 +26,11 @@ A stunning, single-page portfolio website built with pure HTML, CSS, and vanilla
 |---------|-------------|
 | **Welcome** | Dramatic intro screen with animated headline and scroll prompt |
 | **Intro** | Profile photo + name + typed tagline + bio + CTAs |
-| **About** | Bio paragraph with glassmorphic stat cards |
-| **Skills** | Categorized skill pills — Languages, Frameworks, Tools & Data |
-| **Projects** | 4 project cards with tech tags and links |
-| **Experience** | Vertical timeline with internships and education |
-| **Contact** | Email, GitHub, LinkedIn, LeetCode with hover-glow icons |
+| **About** | Bio paragraph with glassmorphic stat cards (LeetCode 350+, CGPA 9.00/10) |
+| **Skills** | Categorized skill pills — Languages, AI Engineering, Backend & APIs, Databases & Infrastructure |
+| **Projects** | 4 featured projects — Multi-Agent Enterprise RAG, Retail Demand Forecasting, Quotient, AgriPredict |
+| **Experience** | Vertical timeline with internships (Infosys Springboard, Privacy Weave), education (KPR Institute CGPA 9.00), and achievements |
+| **Contact** | Email, GitHub, LinkedIn, LeetCode, CodeChef with hover-glow icons |
 
 ## 🛠 Tech Stack
 
@@ -60,8 +60,11 @@ npx serve .
 ## 📬 Contact
 
 - **Email:** jeyasree667@gmail.com
+- **Phone:** +91 7418219594
+- **Location:** Coimbatore, India
 - **GitHub:** [Jeyasree-667](https://github.com/Jeyasree-667)
-- **LinkedIn:** [Connect with me](https://linkedin.com/)
+- **LinkedIn:** [jeyasree-s-a-7aa6a835a](https://linkedin.com/in/jeyasree-s-a-7aa6a835a)
+- **LeetCode:** [Jeyasree667](https://leetcode.com/Jeyasree667)
 
 ---
 

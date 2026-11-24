@@ -193,15 +193,26 @@ section.visible{opacity:1;transform:translateY(0)}
 }
 @keyframes orbit{to{transform:rotate(360deg)}}
 
-/* Name shimmer */
+/* Name Dynamic Gradient */
 .intro-name{
   font-size:2.8rem;font-weight:700;margin-bottom:.5rem;text-align:left;
-  background:linear-gradient(90deg,var(--white) 0%,var(--white) 40%,var(--cyan) 50%,var(--white) 60%,var(--white) 100%);
-  background-size:200% 100%;
+  background:linear-gradient(to right, var(--cyan), var(--violet), var(--cyan), var(--white));
+  background-size:300% 100%;
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  animation:shimmer 3s ease-in-out infinite;
+  animation:gradientText 6s ease-in-out infinite;
+  transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor:default;display:inline-block;
 }
-@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
+.intro-name:hover{
+  transform:scale(1.03);
+  letter-spacing:0.03em;
+  filter:drop-shadow(0 0 15px rgba(0,245,255,0.6));
+}
+@keyframes gradientText{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
 .hero-tagline{font-size:1.1rem;color:var(--text);min-height:1.6em;margin-bottom:1rem}
 .hero-tagline .cursor{color:var(--cyan);animation:blink 1s step-end infinite}
@@ -259,26 +270,59 @@ section.visible{opacity:1;transform:translateY(0)}
 .stat-label{font-size:.85rem;opacity:.7;margin-top:.25rem}
 
 /* ===== SKILLS ===== */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.skill-card{padding:1.5rem;text-align:center}
-.skill-icon{font-size:1.8rem;margin-bottom:.75rem;color:var(--cyan);opacity:.7}
-.skill-card h3{font-size:.95rem;margin-bottom:1rem;color:var(--cyan)}
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.skill-card{
+  padding:2rem;text-align:center;
+  background:linear-gradient(145deg,rgba(255,255,255,0.03) 0%,rgba(0,245,255,0.02) 100%);
+}
+.skill-icon{
+  font-size:2.2rem;margin-bottom:1rem;
+  background:linear-gradient(135deg,var(--cyan),var(--violet));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.skill-card h3{font-size:1.1rem;margin-bottom:1.2rem;letter-spacing:0.05em}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
 .pill{
-  font-family:'Fira Code',monospace;font-size:.75rem;
-  padding:.4rem .9rem;border-radius:999px;
-  background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.15);
-  color:var(--text);transition:all .3s;
+  font-family:'Fira Code',monospace;font-size:.8rem;font-weight:500;
+  padding:.5rem 1.1rem;border-radius:8px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.1);
+  color:var(--text);transition:all .4s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+}
+.pill::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(0,245,255,0.2),transparent);
+  transform:translateX(-100%);transition:transform .6s;
 }
 .pill:hover{
-  background:rgba(0,245,255,0.12);border-color:var(--cyan);
-  box-shadow:0 0 12px rgba(0,245,255,0.2);transform:scale(1.05);
+  border-color:var(--cyan);
+  background:rgba(0,245,255,0.08);
+  box-shadow:0 0 15px rgba(0,245,255,0.2),inset 0 0 8px rgba(0,245,255,0.1);
+  transform:translateY(-2px);color:var(--white);
 }
+.pill:hover::before{transform:translateX(100%)}
 
 /* ===== PROJECTS ===== */
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.project-card{padding:1.5rem}
-.project-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.projects-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.project-card{padding:1.75rem}
+.project-header{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap}
+.project-card h3{font-size:1.15rem;margin-bottom:0}
+.badge-status{
+  font-family:'Fira Code',monospace;font-size:.65rem;
+  padding:.2rem .6rem;border-radius:999px;
+  background:rgba(0,245,255,0.1);border:1px solid rgba(0,245,255,0.3);
+  color:var(--cyan);letter-spacing:.05em;
+}
+.project-bullets{
+  list-style:none;padding:0;margin:0 0 1rem 0;
+}
+.project-bullets li{
+  position:relative;padding-left:1.25rem;font-size:.88rem;opacity:.8;margin-bottom:.45rem;line-height:1.6;
+}
+.project-bullets li::before{
+  content:'▹';position:absolute;left:0;color:var(--cyan);font-size:.85rem;
+}
 .project-card p{font-size:.88rem;opacity:.75;margin-bottom:.75rem}
 .project-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
 .project-tag{

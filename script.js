@@ -19,8 +19,8 @@
   const el=document.getElementById('typed-text');
   const phrases=[
     'CSE Engineer · AI/ML Specialist',
-    'Builder of Intelligent Systems',
-    'Full-Stack Developer · Problem Solver',
+    'AI & Backend Systems Engineer',
+    'Problem Solver · 350+ LeetCode',
     'Turning Data into Decisions'
   ];
   let pi=0,ci=0,deleting=false;
